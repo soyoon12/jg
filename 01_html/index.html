@@ -7,10 +7,27 @@
 
    </head>
    <body>
+      <!-- css 없는 문서 마크업 과정-->
       <div class ="login-box">
-         <label>아이디 혹은 이메일</label>
-         <input type="text">
-         
+         <label for="input-1">아이디 혹은 이메일</label><!-- label과 input 세트 인식 위해 for 사용 접근성위해-->
+         <br>
+         <input type="text" id="input-1">
+         <br>
+         <br>
+         <label for="input-2">비밀번호</label>
+         <br>
+         <br>
+         <input type="password" id="input-2">
+         <br>
+         <br>
+         <input type ="checkbox" id ="checkbox-1">
+         <label for="checkbox-1">로그인 유지</label>
+         <button>로그인</button><!--개발쪽에서 연관했을때 버튼태그 사용-->
+         <br>
+         <br>
+         <a href="#">회원가입</a><!--다른 문서로 가는 경우 a태그 사용-->
+         |
+         <a href="#">비밀번호 분실</a>
       </div>
    </body>
 </html>
