@@ -1,35 +1,181 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>html</title>
-		<style>
-			body, h1{margin:0}
-			a{color:#fff}
 
-			.header{
-				background:#333;
-				color:#fff;
-				padding:20px;
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>html</title>
+	<style>
+		body,
+		h1 {
+			margin: 0
+		}
+
+		a {
+			color: #fff
+		}
+
+		.header {
+			background: #333;
+			color: #fff;
+			padding: 20px;
+		}
+
+		.section {
+			height: 100px;
+			background: #999;
+			text-align: center;
+		}
+
+		/* inline block
+			.section>span{
+				height:50px;
+				width: 50px;
+				background: red;
+				display: inline-block;
+				vertical-align: top;
+				/*인라인(), 인라인 블록 세가지의 특성알기
+			}	
+				.section>span:first-child{
+				height:70px;	
 			}
-		</style>
+			
+			*/
 
-  </head>
-  <body>
-    <div class="header">
-			<h1>logo</h1>
-			<div class="nav">
-				<a href="#">menu1</a>
-				<a href="#">menu2</a>
-				<a href="#">menu3</a>
-			</div>
-    </div>
-		<div class="container">
-				<div class="aside"></div>
-				<div class="section">
-					a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>
-				</div>
+
+		.section>span {
+			height: 50px;
+			width: 50px;
+			background: red;
+			display: inline-block;
+		}
+
+		.section>span:first-child {
+			height: 70px;
+			float: left;
+		}
+
+		.section>span:last-child {
+			float: right;
+		}
+
+		.section:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+
+
+
+		.header h1 {
+			float: left;
+		}
+
+		/*.header>div{
+				float: right;	
+			}
+			*/
+		.header .nav {
+			float: right;
+		}
+
+		.header:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+
+
+		.tbl{
+			display: table;
+			width:100%;
+		}
+		.tbl-cell{
+			display: table-cell;
+			background: #333;
+		}
+		.tbl-cell:last-child{
+			background: rgb(56, 7, 7);
+			width: 100px;
+		}
+
+
+		.flex-area{display: flex;}/*인라인 역할?*/
+		.flex-area .flex-cell{
+			background: cyan;
+		
+		}
+		.flex-area .flex-cell:first-child{
+			width: 200px;
+		}
+		.flex-area .flex-cell:last-child{
+			background: rgb(20, 43, 170);
+			flex:1;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="header">
+		<h1>logo</h1>
+		<div class="nav">
+			<a href="#">menu1</a>
+			<a href="#">menu2</a>
+			<a href="#">menu3</a>
 		</div>
-  </body>
+	</div>
+	<div class="container">
+		<div class="aside"></div>
+		<div class="section">
+			<span></span>
+			<span></span>
+		</div>
+			
+		
+
+	</div>
+	<div class ="tbl">
+			<div class="tbl-cell">
+				b<br>
+				b<br>
+				b<br>
+				b<br>
+				b<br>
+				b<br>
+				b<br>
+				b<br>
+				b<br>
+				b<br>
+				b<br>
+				b<br>
+				b<br>
+				b<br>
+			</div>
+			<div class="tbl-cell">
+				a<br>
+				a<br>
+				a<br>
+				a<br>
+				a<br>
+				a<br>
+				a<br>
+			</div>
+	</div>
+
+	<div class ="flex-area">
+		<div class="flex-cell">
+			aaaa<br>
+		</div>
+
+		<div class="flex-cell">
+			bbbb<br>
+			bbbb<br>
+		</div>
+	</div>
+
+</body>
+
 </html>

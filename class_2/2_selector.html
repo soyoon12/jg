@@ -16,10 +16,21 @@
 
 			.container{width:800px; margin:0 auto;text-align:center}
 		
-			.section.box ul li{ border: 5px dashed red}
-			.section.box ul li:first-child{ border:solid; border-color:blue} 
-			.section.box ul li:last-child{ border-color:green}
-		
+			.section.box ul > *{ border: 5px dashed red}
+			.section.box ul > *:first-child{ border:solid; border-color:blue} 
+			.section.box ul > *:last-child{ border-color:green}
+			.section.box ul li:nth-child(2)> *{ border: 5px dashed red}
+			.section.box > a {border-color:green}
+			
+			.section.link> div > a:before{ content:"◈"}
+			/*태그를 활용해서 하는 방법 스팬태그를 사용해서 하는 방법도 있고 이런 방법도 있다.*/
+			.section.link> div > a:after{ content:""; display: inline-block; width:10px; height:10px; background: red; border-radius:100%;}
+			.section.link> div > a:hover{color:red; font-weight: bold;}
+
+			.section.link{ background: #666;}
+			.section.link>div{ float: left;}
+			/*div 부모 link에게 밑과 같이 하면 해결 할수 있다. 클리어 처리*/
+			.section.link:after{content:""; clear :both; display:inline-block;}
 		</style>
 
   </head>
@@ -40,6 +51,7 @@
 							<a href="#">box3</a>
 						</li>
 					</ul>
+					<a href="#" >box4</a>
 				</div>
 				<div class="section link">
 					<div>
