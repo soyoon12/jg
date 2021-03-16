@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="css/reset.css" rel="stylesheet" type="text/css" />
+	<link href="css/fullpage.css" rel="stylesheet" type="text/css" />
+	<link href="css/03_fullpage.css" rel="stylesheet" type="text/css" />
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/fullpage.js"></script>
+
+	<script>
+		$(function () {
+			$(".fullpage_area").fullpage({
+				navigation:true,//네비게이션 만들기 메뉴 유무
+				navigationPosition:"left",//네비게이션 메뉴의 위치
+				sectionsColor:["#999","#4bbfc3","#7baabe","#666"],// 각세션별 배경색 대괄호-> 배열 여러값 넣으줄수 있으니 넣어보자 그리고 각 플러그인 홈페이지가면 속성설명있음
+				navigationTooltips:["main","intro","map","contact"],//네비게이션 베누의 명
+				showActiveTooltip:true//네비게이션 선택 메뉴 활성화
+			});
+		})
+	</script>
+	<style>
+		.section .fp.tableCell{
+			text-align: center;
+			font-size:50px;
+			font-weight: bold;
+			color:#fff;
+			text-shadow:2px 2px 5px rgba(0,0,0,0.3);
+			/* 가로 세로 블러 색상 알쥐뷔 */
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="fullpage_area">
+		<div class="section">
+			내용1
+		</div>
+		<div class="section">
+			내용2
+		</div>
+		<div class="section">
+			내용3
+		</div>
+		<div class="section">
+			내용4
+		</div>
+
+	</div>
+</body>
+
+</html>

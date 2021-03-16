@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="css/reset.css" rel="stylesheet" type="text/css" />
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<style>
+		.wrap {
+			padding: 50px;
+			text-align: center;
+		}
+
+		.wrap .box {
+			height: 2000px;
+			background: #da56be;
+		}
+
+		.wrap .btn_top {
+			width: 100px;
+			height: 100px;
+			line-height: 100px;
+			display: block;
+			background: #5697da;
+			position: fixed;
+			bottom: 10px;
+			right: 10px;
+			color: #fff;
+			font-weight: bold;
+			font-size: 20px;
+			text-align: center;
+			border: 0
+		}
+	</style>
+	<script>
+		$(function () {
+			
+			$(window).scroll(function(){
+				console.log($(this).scrollTop());
+			});
+
+			//클릭시 스크롤이 500px 밑으로 이동
+			// $(".btn_top").click(function(){
+			// 	$(window).scrollTop(500);
+			// })
+
+			//클릭시 500px 밑으로 스크롤 이벤트
+			// $(".btn_top").click(function(){
+			// 	$("html").animate({
+			// 		"scrollTop":500
+			// 	},1000)
+			// })
+
+			
+
+			$(".btn_top").hide(); //숨김
+
+			//스크롤이 최상위에 있을때 버튼 숨김, 조금이라도 밑으로 스크롤이 내려오면 버튼 나타냄
+			$(window).scroll(function(){
+				console.log($(this).scrollTop());
+				var value = $(this).scrollTop();//()안에 값이 없으면 위치값 변형
+				if($(this).scrollTop() <500){//여기 this는 window임 *특정 도형이 나타날때 쓰고 싶으면? position 메소드?
+					$(".btn_top").hide(300);//여기 300은 * 0.3초 다른 애니메이션 쓰고 싶으면? on과 같이 애니메이션 커스텀 해서 씀
+				}else{
+					$(".btn_top").show(300); //나타냄
+				}
+			})
+
+			//탑버튼 클릭시 페이지 상단 이동 이벤트
+			$(".btn_top").click(function(){
+				//$("html").scrollTop(0);//()안에 값이 있으면 구위치값으로 띡 이동
+				$("html").animate({
+					"scrollTop":0
+				}, 1000);
+			});
+		})
+	</script>
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="box"></div>
+		<button class="btn_top">top</button>
+	</div>
+</body>
+
+</html>

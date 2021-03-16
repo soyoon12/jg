@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+		<link href="css/reset.css" rel="stylesheet" type="text/css" />
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<style>
+			.wrap{padding:50px 0;text-align:center;}
+			.wrap .btn{display:inline-block; width:100px; height:100px; line-height:100px; background:#eee;}
+			.wrap .btn.on{
+				background:#666;
+			}
+		</style>
+		<script>
+			//html 로드가 다 되고 난 이후에 실행되는 제이쿼리 함수
+			$(function(){
+				////////////////선택자
+				// $(".btn > span").css({
+				// 	"border":"1px solid #000"
+				// })
+				$(".btn").eq(2).css({
+					"border":"3px solid red"
+				})
+				$(".btn").next().css({
+					"color":"#F69834"
+				})
+				$(".btn").parent().css({
+					"background":"#333"
+				})
+				$(".btn").find("span").css({
+					"font-weight":"bold"
+				})
+
+				////////////////class
+				//addClass(추가), removeClass(제거), toggleClass(on&off)
+				//$(".btn").eq(0).addClass("on");
+				$(".btn").eq(3).removeClass("on");
+
+
+
+				$(".btn").click(function(){
+					//$(this).addClass("on");
+					$(this).toggleClass("on");
+				});
+
+
+			});
+
+			// $(function(){
+			// 	//$(".btn").find("span").css({"border":"1px solid #000"})
+			// 	$(".btn").eq(1).addClass("on");
+			// 	$(".btn").eq(3).removeClass("on");
+			// 	$(".btn").eq(1).toggleClass("on");
+			// })
+		</script>
+  </head>
+  <body>
+    <div class="wrap">
+			<a href="#" class="btn">
+				<span>btn1</span>
+			</a>
+			<a href="#" class="btn">
+				<span>btn2</span>
+			</a>
+			<a href="#" class="btn">
+				<span>btn3</span>
+			</a>
+			<a href="#" class="btn on">
+				<span>btn4</span>
+			</a>
+
+	</div>
+  </body>
+</html>

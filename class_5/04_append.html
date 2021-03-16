@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="css/reset.css" rel="stylesheet" type="text/css" />
+	<link href="css/04_append.css" rel="stylesheet" type="text/css" />
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<style>
+		.btn_box{
+			padding: 20px 0;
+			text-align: center;
+		}
+		.section.list > ul > li{
+			float:left;
+			width: 20%;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+		.section.list > ul > li > a{
+			display: block;
+			background: #007ACC;
+			height: 100px;
+			line-height: 100px;
+			text-align: center;
+			color:#fff;
+		}
+		.section.list > ul:after{/* li에 적용된 float 해제를 위한 clear처리 */
+			content: '';
+			display: block;
+			clear: both;
+		}
+	</style>
+	<script>
+		$(function () {
+			
+			//append 기본 작동법
+			// <1>var num = 1;
+			// $(".btn_add").click(function(){
+			// 목록에 버튼 추가
+			// $(".container .list > ul").append('<li class="unit"><a href="#"> 추가된 버튼</a></li>');
+			
+			// 	num++;
+			// });
+			//인트로 버튼 클릭시 버튼 추가 이벤트 / 인트로 버튼(자기자신)숨김처리
+			$(".btn_intro").click(function(){
+				for( var i=0; i<10; i++){
+					$(".container .list > ul").append('<li class="unit"><button> 추가된 버튼'+(i+1)+'</button></li>');
+					}
+					$(this).hide();
+				});	
+		})
+	</script>
+
+</head>
+
+<body>
+	<div class="wrap">
+
+		<div class="header">
+			<h1>logo</h1>
+			<div class="nav">
+				<a href="#">menu1</a>
+				<a href="#">menu2</a>
+				<a href="#">menu3</a>
+			</div>
+		</div>
+		<div class="container">
+			<div class="intro">
+				<button class="btn_intro">버튼추가</button>
+			</div>
+			<div class="section list">
+				<ul>
+				
+					
+				</ul>
+			</div>
+
+		</div>
+		<div class="footer">
+			footer
+		</div>
+
+
+</body>
+
+</html>
