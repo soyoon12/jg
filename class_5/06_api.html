@@ -21,7 +21,13 @@
 			};
 
 			var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴.
-		})
+			// 마커가 표시될 위치입니다 
+			var markerPosition = new kakao.maps.LatLng(37.51570929930965, 127.01710495489515);
+
+			// 마커를 생성합니다
+			var marker = new kakao.maps.Marker({
+				position: markerPosition
+			})
 	</script>
 
 </head>
@@ -38,7 +44,7 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="map" id="mapid" >
+			<div class="map" id="mapid">
 
 			</div>
 
