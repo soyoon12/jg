@@ -120,6 +120,10 @@
     }
     .chat_area{
         height: calc(100% - 135px);
+        /* vh는 절대적인 값이라 키보드 밑으로
+        레이아웃이 넣어진다. 그렇기 때문에 이렇게 하는것이 낫다 */
+        
+
     }
     .chat_area .item .box .msg{
         font-size: 15px;
@@ -128,4 +132,24 @@
         height:50px;
     }
     
+}
+/********** 말풍선 입력시 에니메이션 처리 ***********/
+.chat_area .item{
+    transition: all 0.3s;
+    opacity: 0;
+    /* 객체에 대한 변형 transform */
+    transform: translateX(-30px);
+
+}
+.chat_area .item.on {
+    opacity: 1;
+    transform: translateX(0) !important;
+}
+
+.chat_area .item.mymsg{
+    transition: all 0.3s;
+   
+    /* 객체에 대한 변형 transform */
+    transform: translateX(30px);
+
 }
